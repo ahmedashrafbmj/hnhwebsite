@@ -45,9 +45,9 @@ const BlogStanderd = ({ blogs }) => {
                           </Link>
                         </h4>
                         <p>{blogItem.content}</p>
-                        <Link href={`/blog-details/blog-details-dark`}>
+                        {/* <Link href={`/blog-details/blog-details-dark`}>
                           <a className="butn bord curve mt-30">Read More</a>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>

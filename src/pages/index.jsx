@@ -57,13 +57,10 @@ const Home = () => {
         <Works />
         <Numbers />
         {/* <VideoWithTestimonials /> */}
-        <video autoPlay controls>
-  <source src="/img/CompressVideo.mp4" type="video/mp4" />
-
-</video>
+       
         {/* <SkillsCircle theme="light" /> */}
         <Clients theme="light" />
-        <Blogs1 />
+        {/* <Blogs1 /> */}
         <CallToAction />
         <Footer />
       </div>

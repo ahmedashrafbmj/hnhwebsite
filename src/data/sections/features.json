@@ -3,36 +3,36 @@
         "id": 1,
         "icon": "pe-7s-paint-bucket",
         "title": "Graphic Design",
-        "content": "Tempore corrupti temporibus fuga earum asperiores fugit laudantium."
+        "content": "UI/UX design encompasses many different skills and disciplines in the production and maintenance of websites. The different areas of web design include web graphic design;…"
     },
     {
         "id": 2,
-        "icon": "pe-7s-phone",
-        "title": "Web & Mobile Design",
-        "content": "Tempore corrupti temporibus fuga earum asperiores fugit."
+        "icon": "fas fa-laptop",
+        "title": "Web Developement",
+        "content": "Web improvement is the work engaged with building up a site for the Internet (World Wide Web) or an intranet (a private network)"
     },
     {
         "id": 3,
         "icon": "pe-7s-display1",
-        "title": "Social Media Marketing",
-        "content": "Tempore corrupti temporibus fuga earum asperiores fugit."
+        "title": "Digital Marketing",
+        "content": "Leverage the skills of our company’s digital marketing services capable of delivering outstanding marketing strategies. We help our clients to engage, convert, and retain customers…"
     },
     {
         "id": 4,
         "icon": "pe-7s-display1",
-        "title": "Search engine Optimization",
-        "content": "Tempore corrupti temporibus fuga earum asperiores fugit."
+        "title": "Machine Learning",
+        "content": "Machine learning (ML) is a field of inquiry devoted to understanding and building methods that 'learn', that is, methods that leverage data to improve performance."
     },
     {
         "id": 5,
         "icon": "pe-7s-display1",
-        "title": "Social Media Marketing",
-        "content": "Tempore corrupti temporibus fuga earum asperiores fugit."
+        "title": "Devops",
+        "content": "DevOps is a set of practices that combines software development and IT operations. It aims to shorten the systems development life cycle and provide continuous."
     },
     {
         "id": 6,
         "icon": "pe-7s-diskette",
-        "title": "Document Legal Policy",
-        "content": "Tempore corrupti temporibus fuga earum asperiores fugit laudantium."
+        "title": "APP DEVELOPMENT",
+        "content": "With a dedicated company like HnH Tech Solutions, we provide specialist services you may need for Android and iOS developers, UI/UX designers, Testers, Project managers."
     }
 ]

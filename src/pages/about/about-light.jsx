@@ -37,13 +37,14 @@ useEffect(() => {
       <Navbar nr={navbarRef} lr={logoRef} theme="themeL" />
       <PagesHeader />
       <AboutIntro />
-      <Services style="4item" />
+      <Services style="3item" />
       <VideoWithTestimonials />
-      <SkillsCircle from="aboutPage" />
-      <Team />
-      <MinimalArea />
-      <Clients theme="light" />
-      <CallToAction />
+      {/* <VideoWithTestimonials />
+      <SkillsCircle from="aboutPage" /> */}
+      {/* <Team /> */}
+      {/* <MinimalArea /> */}
+      {/* <Clients theme="light" /> */}
+      {/* <CallToAction /> */}
       <Footer />
     </LightTheme>
   );

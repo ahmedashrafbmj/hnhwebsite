@@ -20,15 +20,15 @@ const VideoWithTestimonials = () => {
     slidesToScroll: 1,
   };
   return (
-    <section className="block-sec">
+    <section className="block-sec" style={{height:"80vh"}}>
       <div
-        className="background bg-img pt-100 pb-0 parallaxie"
-        style={{ backgroundImage: `url(/img/bg-vid.jpg)` }}
+        className="background bg-img pb-0 parallaxie "
+        style={{ backgroundImage: `url(/img/bg-vid.jpg)`,height:"80vh" }}
         data-overlay-dark="5"
       >
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            {/* <div className="col-lg-6">
               <div className="vid-area">
                 <span className="text">Watch Video</span>
                 <div className="vid-icon">
@@ -55,8 +55,8 @@ const VideoWithTestimonials = () => {
                   </a>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-5 offset-lg-1">
+            </div> */}
+            <div className="col-lg-6 offset-lg-1 mt-4" >
               <div className="testim-box">
                 <div className="head-box">
                   <h6 className="wow fadeIn" data-wow-delay=".5s">
@@ -73,9 +73,8 @@ const VideoWithTestimonials = () => {
                 >
                   <div className="item">
                     <p>
-                      Nulla metus metus ullamcorper vel tincidunt sed euismod
-                      nibh volutpat velit class aptent taciti sociosqu ad
-                      litora.
+                    Working with several word press themes and templates the last years,
+I only can say this is the best in every level. I use it for my company and the reviews that I have already are all excellent.
                     </p>
                     <div className="info">
                       <div className="img">
@@ -85,9 +84,9 @@ const VideoWithTestimonials = () => {
                       </div>
                       <div className="cont">
                         <div className="author">
-                          <h6 className="author-name ">Alex Regelman</h6>
+                          <h6 className="author-name ">Alina Lora</h6>
                           <span className="author-details">
-                            Co-founder, Colabrio
+                            Former Manager, ITSoft
                           </span>
                         </div>
                       </div>
@@ -95,9 +94,8 @@ const VideoWithTestimonials = () => {
                   </div>
                   <div className="item">
                     <p>
-                      Nulla metus metus ullamcorper vel tincidunt sed euismod
-                      nibh volutpat velit class aptent taciti sociosqu ad
-                      litora.
+                    This is one of the BEST THEMES I have ever worked with. The extra bells and whistles added to it are amazing. Elementor features add
+extra flavor. The customer support is very responsive.
                     </p>
                     <div className="info">
                       <div className="img">
@@ -107,9 +105,9 @@ const VideoWithTestimonials = () => {
                       </div>
                       <div className="cont">
                         <div className="author">
-                          <h6 className="author-name ">Alex Regelman</h6>
+                          <h6 className="author-name ">Rahon Jho</h6>
                           <span className="author-details">
-                            Co-founder, Colabrio
+                          Former Manager, ITSoft
                           </span>
                         </div>
                       </div>
@@ -117,9 +115,8 @@ const VideoWithTestimonials = () => {
                   </div>
                   <div className="item">
                     <p>
-                      Nulla metus metus ullamcorper vel tincidunt sed euismod
-                      nibh volutpat velit class aptent taciti sociosqu ad
-                      litora.
+                    Great theme, one of the best I have worked with in a while. Full
+featured and great support for the minor issues I had which were really my not being skilled/experienced enough.
                     </p>
                     <div className="info">
                       <div className="img">
@@ -129,9 +126,9 @@ const VideoWithTestimonials = () => {
                       </div>
                       <div className="cont">
                         <div className="author">
-                          <h6 className="author-name ">Alex Regelman</h6>
+                          <h6 className="author-name ">Donald Frew</h6>
                           <span className="author-details">
-                            Co-founder, Colabrio
+                          Former Manager, ITSoft
                           </span>
                         </div>
                       </div>

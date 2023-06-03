@@ -36,8 +36,8 @@ const BlogLight = () => {
       </div>
       <Navbar nr={navbarRef} lr={logoRef} theme="themeL" />
       <PageHeader
-        title="Our News."
-        paragraph="All the most current news and events of our creative team."
+        title="Case Studies"
+        paragraph="Few of Our Apps Adored by millions of users!"
       />
       <BlogStanderd blogs={blog1Data} />
       <Footer />
