@@ -4,7 +4,7 @@ import featuresData from "../../data/sections/features.json";
 const Services = ({ style, lines }) => {
   return (
     <section
-      className={`services bords section-padding ${
+      className={`services bords section-padding mt-4 ${
         style === "4item" ? "lficon" : lines ? "" : "pt-0"
       }`}
     >

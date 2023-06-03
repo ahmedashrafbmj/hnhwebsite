@@ -62,20 +62,20 @@ const Footer = ({ hideBGCOLOR }) => {
                     </Link>
                     <Link href="/blog/blog-dark">
                       <a>
-                        <span className="date">14 sep 2022</span>
+                        <span className="date">5 jan 2019</span>
                       </a>
                     </Link>
                   </div>
                 </li>
                 <li>
-                  <div className="img">
+                  {/* <div className="img">
                     <Link href="/blog-details/blog-details-dark">
                       <a>
                         <img src="/img/blog/2.jpg" alt="" />
                       </a>
                     </Link>
-                  </div>
-                  <div className="sm-post">
+                  </div> */}
+                  {/* <div className="sm-post">
                     <Link href="/blog-details/blog-details-dark">
                       <a>
                         <p>
@@ -89,7 +89,7 @@ const Footer = ({ hideBGCOLOR }) => {
                         <span className="date">14 sep 2022</span>
                       </a>
                     </Link>
-                  </div>
+                  </div> */}
                 </li>
                 <li>
                   <div className="subscribe">
@@ -106,18 +106,32 @@ const Footer = ({ hideBGCOLOR }) => {
                 <img src={appData.lightLogo} alt="" />
               </div>
               <div className="social">
-                <a href="#0">
-                  <i className="fab fa-facebook-f"></i>
+              <a href="#0" >
+                  <Link
+                    href={`https://www.facebook.com/hnhtechsolutions/`}
+                    passHref
+                  >
+                    <a>
+                      <i className="fab fa-facebook-f"></i>
+                    </a>
+                  </Link>
                 </a>
                 <a href="#0">
-                  <i className="fab fa-twitter"></i>
+                  <Link
+                    href={`https://www.linkedin.com/company/hnh-tech-solutions/`}
+                    passHref
+                  >
+                    <a>
+                      <i className="fab fa-linkedin"></i>{" "}
+                    </a>
+                  </Link>
                 </a>
-                <a href="#0">
+                {/* <a href="#0">
                   <i className="fab fa-instagram"></i>
                 </a>
                 <a href="#0">
                   <i className="fab fa-youtube"></i>
-                </a>
+                </a> */}
               </div>
               <div className="copy-right">
                 <p>

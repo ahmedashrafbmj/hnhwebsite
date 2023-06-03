@@ -1,7 +1,7 @@
 import React from "react";
 import ContactFromDate from "../../data/sections/form-info.json";
 import { Formik, Form, Field } from "formik";
-
+import Link from "next/link";
 const ContactForm = () => {
   const messageRef = React.useRef(null);
   function validateEmail(value) {
@@ -40,8 +40,8 @@ const ContactForm = () => {
                   values.message = "";
                   // clear message
                   setTimeout(() => {
-                    messageRef.current.innerText = ''
-                  }, 2000)
+                    messageRef.current.innerText = "";
+                  }, 2000);
                 }}
               >
                 {({ errors, touched }) => (
@@ -100,29 +100,34 @@ const ContactForm = () => {
                   <a href="#0">{ContactFromDate.email}</a>
                 </h5>
                 <h5>{ContactFromDate.phone}</h5>
+                <h5>+92-332-307-2025</h5>
               </div>
               <h3 className="wow" data-splitting>
                 Visit Us.
               </h3>
               <div className="item">
-                <h6>
-                  {ContactFromDate.location.first}
-                  <br />
-                  {ContactFromDate.location.second}
-                </h6>
+                <h6>{ContactFromDate.location.first}</h6>
               </div>
               <div className="social mt-50">
                 <a href="#0" className="icon">
-                  <i className="fab fa-facebook-f"></i>
+                  <Link
+                    href={`https://www.facebook.com/hnhtechsolutions/`}
+                    passHref
+                  >
+                    <a>
+                      <i className="fab fa-facebook-f"></i>
+                    </a>
+                  </Link>
                 </a>
                 <a href="#0" className="icon">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="#0" className="icon">
-                  <i className="fab fa-pinterest"></i>
-                </a>
-                <a href="#0" className="icon">
-                  <i className="fab fa-behance"></i>
+                  <Link
+                    href={`https://www.linkedin.com/company/hnh-tech-solutions/`}
+                    passHref
+                  >
+                    <a>
+                      <i className="fab fa-linkedin"></i>{" "}
+                    </a>
+                  </Link>
                 </a>
               </div>
             </div>

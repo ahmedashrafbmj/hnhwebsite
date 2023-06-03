@@ -20,10 +20,10 @@ const WorksStyle1 = () => {
                 <a>
                   <div
                     className="img"
-                    data-tooltip-tit="Work image"
-                    data-tooltip-sub="Design"
+                    data-tooltip-tit="Aurcade Players"
+                    data-tooltip-sub="Admin and UserSide"
                   >
-                    <img src="/img/portfolio/portfolio/1/1.jpg" alt="" />
+                    <img src="/img/portfolio/metro/01.jpg" alt="" />
                   </div>
                 </a>
               </Link>
@@ -35,10 +35,10 @@ const WorksStyle1 = () => {
                 <a>
                   <div
                     className="img"
-                    data-tooltip-tit="Work image"
-                    data-tooltip-sub="Design"
+                    data-tooltip-tit="Banker Broker"
+                    data-tooltip-sub="Admin Panel"
                   >
-                    <img src="/img/portfolio/portfolio/2/1.jpg" alt="" />
+                    <img src="/img/portfolio/metro/02.jpg" alt="" />
                   </div>
                 </a>
               </Link>
@@ -50,10 +50,10 @@ const WorksStyle1 = () => {
                 <a>
                   <div
                     className="img"
-                    data-tooltip-tit="Work image"
-                    data-tooltip-sub="Design"
+                    data-tooltip-tit="Abeer"
+                    data-tooltip-sub="Admin Panel"
                   >
-                    <img src="/img/portfolio/portfolio/1/2.jpg" alt="" />
+                    <img src="/img/portfolio/metro/03.jpg" alt="" />
                   </div>
                 </a>
               </Link>
@@ -65,10 +65,10 @@ const WorksStyle1 = () => {
                 <a>
                   <div
                     className="img"
-                    data-tooltip-tit="Work image"
-                    data-tooltip-sub="Design"
+                    data-tooltip-tit="Bright consultation"
+                    data-tooltip-sub="Web Application"
                   >
-                    <img src="/img/portfolio/portfolio/2/3.jpg" alt="" />
+                    <img src="/img/portfolio/metro/04.jpg" alt="" />
                   </div>
                 </a>
               </Link>
@@ -80,16 +80,16 @@ const WorksStyle1 = () => {
                 <a>
                   <div
                     className="img"
-                    data-tooltip-tit="Work image"
-                    data-tooltip-sub="Design"
+                    data-tooltip-tit="Clo"
+                    data-tooltip-sub="Mobile Application"
                   >
-                    <img src="/img/portfolio/portfolio/1/3.jpg" alt="" />
+                    <img src="/img/portfolio/metro/05.jpg" alt="" />
                   </div>
                 </a>
               </Link>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 valign">
+          {/* <div className="col-lg-4 col-md-6 valign">
             <div className="item">
               <Link href={`/project-details2/project-details2-dark`}>
                 <a>
@@ -148,7 +148,7 @@ const WorksStyle1 = () => {
                 </a>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
