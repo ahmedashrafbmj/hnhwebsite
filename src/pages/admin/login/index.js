@@ -43,7 +43,7 @@ const Login = () => {
             body: raw,
         };
 
-        fetch("https://hnhwebsite-pcuu.vercel.app/api/login", requestOptions).then(response => {console.log(response,"response")})
+        fetch("http://localhost:3000/api/login", requestOptions).then(response => {response.text()})
             .then(result => {
                 console.log(result)
                 let user = JSON.parse(result)
