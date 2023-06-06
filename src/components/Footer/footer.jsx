@@ -17,7 +17,7 @@ const Footer = ({ hideBGCOLOR }) => {
                 <li>
                   <span className="icon pe-7s-map-marker"></span>
                   <div className="cont">
-                    <h6>Officeal Address</h6>
+                    <h6>Official Address</h6>
                     <p>Block 1 Nazimabad, Karachi, Pakistan</p>
                   </div>
                 </li>
