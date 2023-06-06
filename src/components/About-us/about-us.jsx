@@ -31,7 +31,6 @@ const AboutUs = () => {
                 <div className="item" key={item.id}>
                   <h4>
                     {item.number}
-                    <span>{item.letter}</span>
                   </h4>
                   <h6>{item.stautsName}</h6>
                 </div>
