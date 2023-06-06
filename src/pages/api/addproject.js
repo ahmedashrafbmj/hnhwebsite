@@ -169,7 +169,7 @@ const handler = async (req, res) => {
                         console.log(fileset)
            let  data  = {...fields,image:fileset}
              let newpro = new Project(data)
-            //  await newpro.save()
+             await newpro.save()
              res.status(200).json({ message: "successfully ",data:files })
            }
           }
