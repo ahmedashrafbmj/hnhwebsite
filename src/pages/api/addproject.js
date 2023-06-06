@@ -158,10 +158,19 @@ const handler = async (req, res) => {
         }
         else{
           if(files.image.length != 0 ){
-           let  data = {...fields,image:files.image.map(e=>e.newFilename)}
+            console.log(files,'files')
+            let fileset;
+
+            if (typeof files.image === 'object') {
+              fileset = files.image.newFilename;
+            } else {
+              fileset = files?.image?.map(e => e.newFilename);
+            }
+                        console.log(fileset)
+           let  data  = {...fields,image:fileset}
              let newpro = new Project(data)
-             await newpro.save()
-             res.status(200).json({ message: "successfully ",data:data })
+            //  await newpro.save()
+             res.status(200).json({ message: "successfully ",data:files })
            }
           }
           
