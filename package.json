@@ -2,7 +2,7 @@
   "name": "vie-react",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "next": "next dev",
     "build": "next build",
     "export": "next build && next export",
     "start": "next start",
@@ -10,8 +10,13 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
+    "formidable": "^2.1.1",
     "formik": "^2.2.9",
+    "fs": "^0.0.1-security",
+    "mongoose": "^7.2.2",
+    "multer": "^1.4.5-lts.1",
     "next": "12.0.4",
+    "next-connect": "^1.0.0",
     "react": "17.0.2",
     "react-circular-progressbar": "^2.0.4",
     "react-countup": "^6.1.0",
@@ -28,6 +33,7 @@
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-next": "12.0.4"
+    "eslint-config-next": "12.0.4",
+    "nodemon": "^2.0.22"
   }
 }
