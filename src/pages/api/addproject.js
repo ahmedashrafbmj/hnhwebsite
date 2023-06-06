@@ -109,6 +109,8 @@ import connectDb from "../../Middelwares/Mogoose";
 import formidable from 'formidable';
 import nextConnect from 'next-connect'
 import { dirname } from 'path';
+import cors from "cors"
+
 export const config = {
   api: {
     bodyParser: false

@@ -43,14 +43,14 @@ const Login = () => {
             body: raw,
         };
 
-        fetch("http://localhost:3000/api/login", requestOptions).then(response => {response.text()})
+        fetch("http://localhost:3000/api/login", requestOptions).then(response => response.text())
             .then(result => {
                 console.log(result)
                 let user = JSON.parse(result)
                 console.log(user,"user")
-                let {success} = user
-                if(success){
-                    localStorage.setItem('token', result)
+                let {message} = user
+                if(message === "Login successful"){
+                    localStorage.setItem('token', result.token)
                     Router.push({ pathname: '/dashboard',})
 
                 }
