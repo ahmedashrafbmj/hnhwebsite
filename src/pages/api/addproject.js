@@ -185,6 +185,11 @@ const handler = async (req, res) => {
   }
 };
 
+const corsMiddleware = cors();
+
 export default function (req, res) {
-  connectDb(req, res, handler);
+  corsMiddleware(req, res, () => {
+    connectDb(req, res, handler);
+  });
 }
+
