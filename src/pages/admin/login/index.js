@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Router, { withRouter } from 'next/router'
 
 const Login = () => {
 
@@ -32,22 +33,26 @@ const Login = () => {
             "action":"login"
         });
         console.log(raw,"raw")
-
+        const formData  = new FormData
+       formData.append("username",username)
+       formData.append("password",password)
+       formData.append("action","login")
         var requestOptions = {
             method: 'POST',
             headers: myHeaders,
             body: raw,
-            redirect: 'follow'
         };
 
-        fetch("http://localhost:3000/api/login", requestOptions)
-            .then(response => response.text())
+        fetch("http://localhost:3000/api/login", requestOptions).then(response => {console.log(response,"response")})
             .then(result => {
-                // console.log(result)
+                console.log(result)
                 let user = JSON.parse(result)
+                console.log(user,"user")
                 let {success} = user
                 if(success){
                     localStorage.setItem('token', result)
+                    Router.push({ pathname: '/dashboard',})
+
                 }
             })
             .catch(error => console.log('error', error));

@@ -28,7 +28,7 @@ export const config = {
         form.parse(req, async function (err, fields, files) {
           // Handle form parsing errors
           if (err) {
-            res.status(400).json({ error: 'File Upload error' });
+            res.status(400).json({ error: 'Login error' });
           } else {
             const { username, password, action } = fields;
   
