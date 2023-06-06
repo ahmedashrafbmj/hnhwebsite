@@ -3,6 +3,8 @@ import jwt from 'jsonwebtoken';
 import User from '../../Models/AdminUser';
 import connectDb from '../../Middelwares/Mogoose';
 import formidable from 'formidable';
+import cors from 'cors';
+
 
 // ...
 
