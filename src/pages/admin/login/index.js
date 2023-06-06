@@ -40,14 +40,14 @@ const Login = () => {
             redirect: 'follow'
         };
 
-        fetch("http://localhost:3000/api/login", requestOptions)
+        fetch("https://hnhwebsite-pcuu.vercel.app/api/login", requestOptions)
             .then(response => response.text())
             .then(result => {
                 // console.log(result)
                 let user = JSON.parse(result)
                 let {success} = user
                 if(success){
-                    localStorage.setItem('user', result)
+                    localStorage.setItem('token', result)
                 }
             })
             .catch(error => console.log('error', error));
