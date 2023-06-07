@@ -291,7 +291,7 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
     Data.append("StartDate",StartDate)
     Data.append("EndDate",EndDate)
     var config = {
-      method: "post",
+      method: "POST",
       url: `${baseurl.baseurl}/addproject`,
       data: Data,
       headers: {
