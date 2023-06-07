@@ -150,17 +150,17 @@ const handler = async (req, res) => {
         filename: (a, b, c) => {
           return `${Math.random() * 100}${c.originalFilename}`
         },
-        multiples:true
+        multiples: true
       });
 
       form.parse(req, async function (err, fields, files) {
         console.log(err)
         if (err) {
-          res.status(400).json({ error: "File Upload error ",detail:err });
+          res.status(400).json({ error: "File Upload error ", detail: err });
         }
-        else{
-          if(files.image.length != 0 ){
-            console.log(files,'files')
+        else {
+          if (files.image.length != 0) {
+            console.log(files, 'files')
             let fileset;
 
             if (typeof files.image === 'object') {
@@ -168,14 +168,14 @@ const handler = async (req, res) => {
             } else {
               fileset = files?.image?.map(e => e.newFilename);
             }
-                        console.log(fileset)
-           let  data  = {...fields,image:fileset}
-             let newpro = new Project(data)
-             await newpro.save()
-             res.status(200).json({ message: "successfully ",data:files })
-           }
+            console.log(fileset)
+            let data = { ...fields, image: fileset }
+            let newpro = new Project(data)
+            await newpro.save()
+            res.status(200).json({ message: "successfully ", data: files })
           }
-          
+        }
+
       });
 
     } else {

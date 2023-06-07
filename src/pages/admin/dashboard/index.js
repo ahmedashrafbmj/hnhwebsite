@@ -277,12 +277,12 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
   };
 
   console.log(selectedFiles,"selectedFiles")
+  console.log( selectedFiles.map((e,i)=> e)," selectedFiles.map((e,i)=>{ Data.append(`image[${i}]`, e?.file);})")
   const submit = (e) => {
     e.preventDefault();  // is used for to stop reload page on submit
     let { title,Description,StartDate,EndDate} = values
     const Data = new FormData();
-    selectedFiles.map((e,i)=>{ Data.append(`image[${i}]`, e?.file);})
-    // console.log(email,password)
+    selectedFiles.map((e,i)=>{ Data.append(`image[${i}]`, e);})
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 console.log(values)
