@@ -280,6 +280,8 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
   const submit = (e) => {
     e.preventDefault();  // is used for to stop reload page on submit
     let { title,Description,StartDate,EndDate} = values
+    const Data = new FormData();
+    selectedFiles.map((e,i)=>{ Data.append(`image[${i}]`, e?.file);})
     // console.log(email,password)
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -297,7 +299,7 @@ const images = selectedFiles.map((e,i)=>{`image${i}:${e?.file}`})
     var requestOptions = {
         method: 'POST',
         headers: myHeaders,
-        body: raw,
+        body: Data,
     };
 
     fetch(`${baseurl.baseurl}/addproject`, requestOptions).then(response => response.text())
