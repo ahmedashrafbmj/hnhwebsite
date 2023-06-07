@@ -19,7 +19,7 @@ import baseurl from '../../../config/baseurl';
 
 const Example = () => {
   const [createModalOpen, setCreateModalOpen] = useState(false);
-  const [tableData, setTableData] = useState(tableDatal);
+  const [tableData, setTableData] = useState();
   const [validationErrors, setValidationErrors] = useState({});
 
   const handleCreateNewRow = (values) => {
