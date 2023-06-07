@@ -257,13 +257,14 @@ console.log(data,"data state")
         open={createModalOpen}
         onClose={() => setCreateModalOpen(false)}
         onSubmit={handleCreateNewRow}
+        onData={getData}
       />
     </>
   );
 };
 
 //example of creating a mui dialog modal for creating new rows
-export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
+export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit,onData }) => {
   const [values, setValues] = useState();
 
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -310,6 +311,8 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
     axios(config)
       .then(function (response) {
         console.log(response,"response");
+        onData()
+        onClose();
         // SetArray(response?.data?.message);
     
       })
