@@ -156,7 +156,7 @@ const handler = async (req, res) => {
       form.parse(req, async function (err, fields, files) {
         console.log(err)
         if (err) {
-          res.status(400).json({ error: "File Upload error " });
+          res.status(400).json({ error: "File Upload error ",detail:err });
         }
         else{
           if(files.image.length != 0 ){
