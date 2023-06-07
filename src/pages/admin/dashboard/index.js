@@ -14,7 +14,7 @@ import {
   Tooltip,
 } from '@mui/material';
 import { Delete, Edit } from '@mui/icons-material';
-import { tableDatal, states } from './makeData1';
+// import { tableDatal, states } from './makeData1';
 import baseurl from '../../../config/baseurl';
 
 const Example = () => {
