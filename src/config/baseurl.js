@@ -1,5 +1,5 @@
 const baseurl  = 
-{baseurl:"http://localhost:3000/api",
+{baseurl:"http://hnhwebsite.vercel.app/api",
 imageurl:"https://hnhwebsite.vercel.app/"
 }
 export default baseurl
