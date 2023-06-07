@@ -21,6 +21,7 @@ const Example = () => {
   const [createModalOpen, setCreateModalOpen] = useState(false);
   const [tableData, setTableData] = useState();
   const [validationErrors, setValidationErrors] = useState({});
+  
 
   const handleCreateNewRow = (values) => {
     tableData.push(values);
@@ -210,7 +211,7 @@ console.log(data,"data state")
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
         }),
-        type: 'file',
+       
 
       },
 
@@ -274,6 +275,11 @@ console.log(data,"data state")
 export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
   const [values, setValues] = useState();
 
+  const [selectedFiles, setSelectedFiles] = useState([]);
+    const handleFileSelect = (event) => {
+      const files = event.target.files;
+      setSelectedFiles([...selectedFiles, ...files]);
+    };
   const handleSubmit = () => {
     //put your validation logic here
     onSubmit(values);
@@ -287,13 +293,14 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 console.log(values)
+console.log(selectedFiles,"selectedFiles")
 
     var raw = JSON.stringify({
         "title": title,
         "Description": Description,
         "StartDate": StartDate,
         "EndDate": EndDate,
-        "image[0]": "EndDate",
+        // selectedFiles.map((e,i)=>{`image${i}:${e?.file}`})
         "action":"login"
     });
     console.log(raw,"raw")
@@ -319,7 +326,6 @@ console.log(values)
         .catch(error => console.log('error', error));
 }
 
-
   return (
     <Dialog open={open}>
       <DialogTitle textAlign="center">Create New Account</DialogTitle>
@@ -342,6 +348,7 @@ console.log(values)
                 }
               />
             ))}
+      <input type="file" multiple onChange={handleFileSelect} />
           </Stack>
         </form>
       </DialogContent>
