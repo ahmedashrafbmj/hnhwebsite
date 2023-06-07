@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Router, { withRouter } from 'next/router'
+import baseurl from '../../../config/baseurl'
 
 const Login = () => {
 
@@ -43,7 +44,7 @@ const Login = () => {
             body: raw,
         };
 
-        fetch(`${baseurl}/login`, requestOptions).then(response => response.text())
+        fetch(`${baseurl.baseurl}/login`, requestOptions).then(response => response.text())
             .then(result => {
                 console.log(result)
                 let user = JSON.parse(result)
