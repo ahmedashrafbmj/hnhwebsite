@@ -285,12 +285,20 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
         let { title,Description,StartDate,EndDate} = values
 
     const Data = new FormData();
-    
-      Data.append("image",selectedFiles)
+    // if(selectedFiles < 1){
+      selectedFiles.map((e,i)=>{ Data.append(`image`, e);})
+      Data.append("title",title)
       Data.append("Description",Description)
       Data.append("StartDate",StartDate)
       Data.append("EndDate",EndDate)
-    
+
+    // }
+    // else{
+    //   Data.append("image",title)
+    //   Data.append("Description",Description)
+    //   Data.append("StartDate",StartDate)
+    //   Data.append("EndDate",EndDate)
+    // }
     var config = {
       method: "POST",
       url: `${baseurl.baseurl}/addproject`,
