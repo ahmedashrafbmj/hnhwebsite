@@ -284,19 +284,14 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 console.log(values)
-
+const images = selectedFiles.map((e,i)=>{`image${i}:${e?.file}`})
     var raw = JSON.stringify({
         "title": title,
         "Description": Description,
         "StartDate": StartDate,
         "EndDate": EndDate,
-        ...selectedFiles.reduce((acc, file, index) => {
-          acc[`image[${index}]`] = file?.file;
-          return acc;
-        }, {}),
-        // selectedFiles.map((e,i)=>{`image${i}:${e?.file}`})
-        "action":"login"
-    });
+        "action":"login",
+      ...images });
     console.log(raw,"raw")
   
     var requestOptions = {
