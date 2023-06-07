@@ -165,13 +165,11 @@ const handler = async (req, res) => {
             console.log(files, 'files')
             let fileset;
 
-            if (typeof files.image === 'object') {
-              fileset = files.image.newFilename;
-            } else {
+           
               fileset = files?.image?.map(e => e.newFilename);
-            }
             console.log(fileset)
             let data = { ...fields, image: fileset }
+            console.log(data,"data")
             let newpro = new Project(data)
             await newpro.save()
             res.status(200).json({ message: "successfully ", data: files })
