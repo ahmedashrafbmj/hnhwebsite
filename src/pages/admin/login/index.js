@@ -52,7 +52,7 @@ const Login = () => {
                 let {message} = user
                 if(message === "Login successful"){
                     localStorage.setItem('token', result.token)
-                    Router.push({ pathname: '/dashboard',})
+                    Router.push({ pathname: '/admin/dashboard',})
 
                 }
             })

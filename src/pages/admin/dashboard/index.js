@@ -37,7 +37,7 @@ const Example = () => {
       redirect: 'follow'
     };
     
-    fetch("http://localhost:3000/api/getprojects", requestOptions)
+    fetch(`${baseurl.baseurl}/getprojects`, requestOptions)
       .then(response => response.text())
       .then(result => {
         console.log("result==>",JSON.parse(result))
@@ -124,17 +124,7 @@ const submit = (e) => {
   };
 
   const handleDeleteRow = useCallback(
-    (row) => {
-      if (
-        !confirm(`Are you sure you want to delete ${row.getValue('firstName')}`)
-      ) {
-        return;
-      }
-      //send api delete request here, then refetch or update local table data for re-render
-      tableData.splice(row.index, 1);
-      setTableData([...tableData]);
-    },
-    [tableData],
+   
   );
 
   const getCommonEditTextFieldProps = useCallback(
@@ -286,6 +276,7 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
     onClose();
   };
 
+  console.log(selectedFiles,"selectedFiles")
   const submit = (e) => {
     e.preventDefault();  // is used for to stop reload page on submit
     let { title,Description,StartDate,EndDate} = values
@@ -293,13 +284,16 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 console.log(values)
-console.log(selectedFiles,"selectedFiles")
 
     var raw = JSON.stringify({
         "title": title,
         "Description": Description,
         "StartDate": StartDate,
         "EndDate": EndDate,
+        ...selectedFiles.reduce((acc, file, index) => {
+          acc[`image[${index}]`] = file?.file;
+          return acc;
+        }, {}),
         // selectedFiles.map((e,i)=>{`image${i}:${e?.file}`})
         "action":"login"
     });
@@ -311,7 +305,7 @@ console.log(selectedFiles,"selectedFiles")
         body: raw,
     };
 
-    fetch(`${baseurl}/addproject`, requestOptions).then(response => response.text())
+    fetch(`${baseurl.baseurl}/addproject`, requestOptions).then(response => response.text())
         .then(result => {
             // console.log(result)
             let user = JSON.parse(result)
