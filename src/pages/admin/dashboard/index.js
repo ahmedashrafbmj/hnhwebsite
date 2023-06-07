@@ -16,6 +16,7 @@ import {
 import { Delete, Edit } from '@mui/icons-material';
 // import { tableDatal, states } from './makeData1';
 import baseurl from '../../../config/baseurl';
+import axios from 'axios';
 
 const Example = () => {
   const [createModalOpen, setCreateModalOpen] = useState(false);
@@ -276,46 +277,103 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
     onClose();
   };
 
-  console.log(selectedFiles,"selectedFiles")
-  console.log( selectedFiles.map((e,i)=> e)," selectedFiles.map((e,i)=>{ Data.append(`image[${i}]`, e?.file);})")
-  const submit = (e) => {
-    e.preventDefault();  // is used for to stop reload page on submit
-    let { title,Description,StartDate,EndDate} = values
+
+
+
+
+  const submit = () => {
+        let { title,Description,StartDate,EndDate} = values
+
     const Data = new FormData();
     selectedFiles.map((e,i)=>{ Data.append(`image[${i}]`, e);})
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-console.log(values)
-const images = selectedFiles.map((e,i)=>{`image${i}:${e?.file}`})
-    var raw = JSON.stringify({
-        "title": title,
-        "Description": Description,
-        "StartDate": StartDate,
-        "EndDate": EndDate,
-        "action":"login",
-      ...images });
-    console.log(raw,"raw")
-  
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: Data,
+    Data.append("title",title)
+    Data.append("Description",Description)
+    Data.append("StartDate",StartDate)
+    Data.append("EndDate",EndDate)
+    var config = {
+      method: "post",
+      url: `${baseurl.baseurl}/addproject`,
+      data: Data,
+      headers: {
+        Accept: "application/json",
+      },
     };
+    axios(config)
+      .then(function (response) {
+        console.log(response,"response");
+        // SetArray(response?.data?.message);
+    
+      })
+      .catch(function (error) {
+        console.log(error,"error");
 
-    fetch(`${baseurl.baseurl}/addproject`, requestOptions).then(response => response.text())
-        .then(result => {
-            // console.log(result)
-            let user = JSON.parse(result)
-            console.log(user,"user")
-            let {message} = user
-            if(message === "Login successful"){
-                localStorage.setItem('token', result.token)
-                Router.push({ pathname: '/dashboard',})
+        // window.scrollTo({
+        //   top: 0,
+        //   behavior: "smooth",
+        // });
+        // setBund(error?.response?.data?.errors);
+        // // const keys = Object.keys(error?.response?.data?.errors);
+        // // keys.forEach((element, i) => {
+        // //   console.log(error?.response?.data?.errors[element][0]);
+        // });
+        // Swal.fire({
+        //   toast: true,
+        //   icon: "error",
+        //   title: error?.response?.data?.message,
+        //   animation: true,
+        //   position: "top-right",
+        //   showConfirmButton: false,
+        //   timer: 3000,
+        //   timerProgressBar: true,
+        //   didOpen: (toast) => {
+        //     toast.addEventListener("mouseenter", Swal.stopTimer);
+        //     toast.addEventListener("mouseleave", Swal.resumeTimer);
+        //   },
+        // });
+      });
+  };
 
-            }
-        })
-        .catch(error => console.log('error', error));
-}
+
+  console.log(selectedFiles,"selectedFiles")
+  console.log( selectedFiles.map((e,i)=> e)," selectedFiles.map((e,i)=>{ Data.append(`image[${i}]`, e?.file);})")
+//   const submit = (e) => {
+//     e.preventDefault();  // is used for to stop reload page on submit
+//     let { title,Description,StartDate,EndDate} = values
+//     const Data = new FormData();
+//     selectedFiles.map((e,i)=>{ Data.append(`image[${i}]`, e);})
+//     var myHeaders = new Headers();
+//     myHeaders.append("Content-Type", "application/json");
+// console.log(values)
+// const images = selectedFiles.map((e,i)=>{`image${i}:${e?.file}`})
+//     var raw = JSON.stringify({
+//         "title": title,
+//         "Description": Description,
+//         "StartDate": StartDate,
+//         "EndDate": EndDate,
+//         "action":"login",
+//       ...images });
+//     console.log(raw,"raw")
+  
+//     var requestOptions = {
+//         method: 'POST',
+//         headers: myHeaders,
+//         body: Data,
+//     };
+
+//     fetch(`${baseurl.baseurl}/addproject`, requestOptions).then(response => response.text())
+//         .then(result => {
+//             // console.log(result)
+//             let user = JSON.parse(result)
+//             console.log(user,"user")
+//             let {message} = user
+//             if(message === "Login successful"){
+//                 localStorage.setItem('token', result.token)
+//                 Router.push({ pathname: '/dashboard',})
+
+//             }
+//         })
+//         .catch(error => console.log('error', error));
+// }
 
   return (
     <Dialog open={open}>
