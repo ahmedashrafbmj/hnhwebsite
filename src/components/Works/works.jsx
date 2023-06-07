@@ -97,8 +97,8 @@ const Works = () => {
               >
                 {pageLoaded &&
                 data?.map((item,index)=>{
-                  return
-          (        <SwiperSlide className="swiper-slide" key={item.id}>
+                  return(  
+                          <SwiperSlide className="swiper-slide" key={item.id}>
                   <div
                     className="content wow noraidus fadeInUp"
                     data-wow-delay=".3s"
