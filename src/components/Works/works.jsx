@@ -7,6 +7,7 @@ import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import baseurl from "../../config/baseurl";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Works = () => {
@@ -16,6 +17,32 @@ const Works = () => {
   useEffect(() => {
     setPageLoaded(true);
   }, [pageLoaded]);
+
+  const [data, setData] = useState([])
+
+  const getData = async() => {
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+    
+    fetch(`${baseurl.baseurl}/getprojects`, requestOptions)
+      .then(response => response.text())
+      .then(result => {
+        console.log("result==>",JSON.parse(result))
+        let data = JSON.parse(result)
+        console.log(data,"data")
+        console.log(data.projects)
+        setData(data.data)
+      }
+        )
+      .catch(error => console.log('error', error));
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
+
   return (
     <section className="work-carousel metro position-re">
       <div className="container-fluid">
@@ -69,33 +96,36 @@ const Works = () => {
                 }}
               >
                 {pageLoaded &&
-                  worksData.map((item, index) => (
-                    <SwiperSlide className="swiper-slide" key={item.id}>
-                      <div
-                        className="content wow noraidus fadeInUp"
-                        data-wow-delay=".3s"
-                      >
-                        <div
-                          className="item-img bg-img wow imago"
-                          style={{
-                            backgroundImage: `url(${item.image})`,
-                          }}
-                        />
-                        <div className="cont">
-                          <h6 className="color-font">
-                            <a href="#0">{item.title}</a>
-                          </h6>
-                          <h4>
-                            <Link
-                              href={`/project-details2/project-details2-dark`}
-                            >
-                              {item.secTex}
-                            </Link>
-                          </h4>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  ))}
+                data?.map((item,index)=>{
+                  <SwiperSlide className="swiper-slide" key={item.id}>
+                  <div
+                    className="content wow noraidus fadeInUp"
+                    data-wow-delay=".3s"
+                  >
+                    <div
+                      className="item-img bg-img wow imago"
+                      style={{
+                        backgroundImage: `url(${baseurl.imageurl+item.image[0]})`,
+                      }}
+                    />
+                    <div className="cont">
+                      <h6 className="color-font">
+                        <a href="#0">{item.title}</a>
+                      </h6>
+                      <h4>
+                        <Link
+                          href={`/project-details2/project-details2-dark`}
+                        >
+                          {item.description}
+                        </Link>
+                      </h4>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                })
+          
+              }
               </Swiper>
 
               <div
