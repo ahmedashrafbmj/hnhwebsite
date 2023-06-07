@@ -143,7 +143,7 @@ export const config = {
 
 const handler = async (req, res) => {
   try {
-    await connectDb();
+    // await connectDb();
     if (req.method === "POST") {
       const form = new formidable.IncomingForm({
         uploadDir: process.cwd() + "/public/uploads",
@@ -154,11 +154,13 @@ const handler = async (req, res) => {
       });
 
       form.parse(req, async function (err, fields, files) {
+        console.log(files)
         console.log(err)
         if (err) {
           res.status(400).json({ error: "File Upload error ", detail: err });
         }
         else {
+          console.log(files,"files")
           if (files.image.length != 0) {
             console.log(files, 'files')
             let fileset;
