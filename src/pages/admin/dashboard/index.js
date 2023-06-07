@@ -15,6 +15,7 @@ import {
 } from '@mui/material';
 import { Delete, Edit } from '@mui/icons-material';
 import { tableDatal, states } from './makeData1';
+import baseurl from '../../../config/baseurl';
 
 const Example = () => {
   const [createModalOpen, setCreateModalOpen] = useState(false);
@@ -303,7 +304,7 @@ console.log(values)
         body: raw,
     };
 
-    fetch("http://localhost:3000/api/addproject", requestOptions).then(response => response.text())
+    fetch(`${baseurl}/addproject`, requestOptions).then(response => response.text())
         .then(result => {
             // console.log(result)
             let user = JSON.parse(result)

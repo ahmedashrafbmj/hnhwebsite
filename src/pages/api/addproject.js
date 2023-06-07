@@ -106,7 +106,7 @@
 import fs from 'fs';
 import Project from "../../Models/Project";
 import connectDb from "../../Middelwares/Mogoose";
-import formidable from 'formidable';
+import formidable from 'formidable'
 import nextConnect from 'next-connect'
 import { dirname } from 'path';
 import cors from "cors"

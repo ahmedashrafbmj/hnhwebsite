@@ -43,7 +43,7 @@ const Login = () => {
             body: raw,
         };
 
-        fetch("http://localhost:3000/api/login", requestOptions).then(response => response.text())
+        fetch(`${baseurl}/login`, requestOptions).then(response => response.text())
             .then(result => {
                 console.log(result)
                 let user = JSON.parse(result)
