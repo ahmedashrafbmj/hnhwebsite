@@ -96,7 +96,7 @@ const Works = () => {
                 }}
               >
                 {pageLoaded &&
-                data?.map((item,index)=>{
+                worksData?.map((item,index)=>{
                   return(  
                           <SwiperSlide className="swiper-slide" key={item.id}>
                   <div
@@ -106,7 +106,7 @@ const Works = () => {
                     <div
                       className="item-img bg-img wow imago"
                       style={{
-                        backgroundImage: `url(${baseurl.imageurl+item.image[0]})`,
+                        backgroundImage: `url(${item.image})`,
                       }}
                     />
                     <div className="cont">
@@ -114,11 +114,11 @@ const Works = () => {
                         <a href="#0">{item.title}</a>
                       </h6>
                       <h4>
-                        <Link
-                          href={`/project-details2/project-details2-dark`}
+                        <p
+                         
                         >
                           {item.description}
-                        </Link>
+                        </p>
                       </h4>
                     </div>
                   </div>
