@@ -20,7 +20,7 @@ const LoadingScreen = () => {
     <>
       <div className={`${appData.showLoading === true ? "showX" : "hideX"}`}>
         <div className="loading">
-          <img src="/img/logo-light.png"  alt="logo" style={{height:"19%"}}/>
+          <img src="/img/Hnhloaderwhitek.gif"  alt="logo" style={{height:"19%"}}/>
           {/* <span>L</span>
           <span>o</span>
           <span>a</span>
