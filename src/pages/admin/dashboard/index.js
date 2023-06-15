@@ -17,8 +17,12 @@ import { Delete, Edit } from '@mui/icons-material';
 // import { tableDatal, states } from './makeData1';
 import baseurl from '../../../config/baseurl';
 import axios from 'axios';
+import Navbar from '../../../components/Navbar/navbar';
 
 const Example = () => {
+  const navbarRef = React.useRef(null);
+  const logoRef = React.useRef(null);
+
   const [createModalOpen, setCreateModalOpen] = useState(false);
   const [tableData, setTableData] = useState();
   const [validationErrors, setValidationErrors] = useState({});
@@ -348,6 +352,9 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit,onData 
 
   console.log(selectedFiles,"selectedFiles")
   console.log( selectedFiles.map((e,i)=> e)," selectedFiles.map((e,i)=>{ Data.append(`image[${i}]`, e?.file);})")
+  const navbarRef = React.useRef(null);
+  const logoRef = React.useRef(null);
+
 //   const submit = (e) => {
 //     e.preventDefault();  // is used for to stop reload page on submit
 //     let { title,Description,StartDate,EndDate} = values
@@ -389,6 +396,7 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit,onData 
 
   return (
     <Dialog open={open}>
+      <Navbar nr={navbarRef} lr={logoRef} theme="themeL" />   
       <DialogTitle textAlign="center">Create New Account</DialogTitle>
       <DialogContent>
         <form onSubmit={(e) => e.preventDefault()}>

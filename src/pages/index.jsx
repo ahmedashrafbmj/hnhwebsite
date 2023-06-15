@@ -59,7 +59,7 @@ const Home = () => {
         {/* <VideoWithTestimonials /> */}
        
         {/* <SkillsCircle theme="light" /> */}
-        <Clients theme="light" />
+        {/* <Clients theme="light" /> */}
         {/* <Blogs1 /> */}
         <CallToAction />
         <Footer />
