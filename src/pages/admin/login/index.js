@@ -91,11 +91,18 @@ const Login = () => {
                                 onChange={handleFormChange}
                             />
                         </div>
-                        <div className="d-grid">
-                            <button type="submit" className="btn btn-primary" onClick={submit}>
-                                Submit
-                            </button>
-                        </div>
+                        {/* <div className="d-grid">
+  <button type="submit" className="btn btn-primary" onClick={submit}>
+    Submit
+  </button>
+</div> */}
+<div onClick={submit}
+              
+              className="btn btn-primary"
+              >
+                <span className="simple-btn right" >Login </span>
+              </div>
+
                     </form>
                 </div>
             </div>
