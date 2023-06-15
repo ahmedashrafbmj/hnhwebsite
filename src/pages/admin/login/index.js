@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Router, { withRouter } from 'next/router'
 import baseurl from '../../../config/baseurl'
+import LightTheme from '../../../layouts/Light';
+
 
 const Login = () => {
 
@@ -62,6 +64,8 @@ const Login = () => {
 
     return (
         <>
+          <LightTheme>
+
             <div className='container-fluid' style={{ height: '100vh' }}>
                 <div className="container border-rounded mt-5" style={{ height: '80%', maxHeight: '100vh', minHeight: '85vh' }}>
                     <form className='m-5' >
@@ -95,6 +99,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
+          </LightTheme>
         </>
     )
 }

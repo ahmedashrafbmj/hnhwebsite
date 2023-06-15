@@ -18,6 +18,22 @@ import { Delete, Edit } from '@mui/icons-material';
 import baseurl from '../../../config/baseurl';
 import axios from 'axios';
 import Navbar from '../../../components/Navbar/navbar';
+import LightTheme from '../../../layouts/Light';
+// import "../../../styles/main.scss";
+
+// import React from "react";
+// import Navbar from "../components/Navbar/navbar"; 
+// import IntroWithSlider from "../components/Intro-with-slider/intro-with-slider";
+// import AboutUs from "../components/About-us/about-us";
+// import Services from "../components/Services/services";
+// import Works from "../components/Works/works";
+// import Numbers from "../components/Numbers/numbers";
+// import Clients from "../components/Clients/clients";
+// import appData from '../data/app.json'
+// import CallToAction from "../components/Call-to-action/call-to-action";
+// import Footer from "../components/Footer/footer";
+// import LightTheme from "../layouts/Light";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Example = () => {
   const navbarRef = React.useRef(null);
@@ -216,6 +232,7 @@ console.log(data,"data state")
 
   return (
     <>
+      <LightTheme>
       <MaterialReactTable
         displayColumnDefOptions={{
           'mrt-row-actions': {
@@ -252,7 +269,7 @@ console.log(data,"data state")
             onClick={() => setCreateModalOpen(true)}
             variant="contained"
           >
-            Create New Account
+            Create New Project
           </Button>
         )}
       />
@@ -263,6 +280,7 @@ console.log(data,"data state")
         onSubmit={handleCreateNewRow}
         onData={getData}
       />
+        </LightTheme>
     </>
   );
 };
@@ -395,9 +413,9 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit,onData 
 // }
 
   return (
+    <>
     <Dialog open={open}>
-      <Navbar nr={navbarRef} lr={logoRef} theme="themeL" />   
-      <DialogTitle textAlign="center">Create New Account</DialogTitle>
+      <DialogTitle textAlign="center">Create New Project</DialogTitle>
       <DialogContent>
         <form onSubmit={(e) => e.preventDefault()}>
           <Stack
@@ -424,10 +442,11 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit,onData 
       <DialogActions sx={{ p: '1.25rem' }}>
         <Button onClick={onClose}>Cancel</Button>
         <Button color="secondary" onClick={submit} variant="contained">
-          Create New Account
+          Create New Project
         </Button>
       </DialogActions>
     </Dialog>
+    </>
   );
 };
 

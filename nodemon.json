@@ -1,6 +1,0 @@
-// {
-//     "verbose": true,
-//     "ignore": ["node_modules", ".next","src/common/*/**.js","src/com[/*/**.js","src/components/*/**.js","src/config/*/**.js","src/data/*/**.js","src/layouts/*/**.js","src/pages/*/**.js","src/styles/*/**.js"],
-//     "watch": ["server/**/*", "app.js","src/pages/api"],
-//     "ext": "js json"
-//   }
